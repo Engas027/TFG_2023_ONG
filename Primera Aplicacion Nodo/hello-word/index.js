@@ -1,7 +1,13 @@
 ///Creado en First Node App. @neurosity/notion es la API de NotionJS. 
 ///AGREGAR SDK NEUROSITY A UN PROYECTO NODE>>AGREGAR DEPENDENCIAS A INDEX.JS. Sirve para importar bibliotecas (Node), agregando las dos dependencias (Notion (Neurosity) y env)
-const { Notion } = require("@neurosity/notion");
-require("dotenv").config();
+//Node.js: es un entorno de tiempo de ejecución (runtime) de JS basado en el motor JS V8 de Google que permite ejecutar código JS fuera del navegador web
+
+const { Notion } = require("@neurosity/notion"); //Importa el objeto Notion del Paquete @neurosity/notion. INSTANCIA DEL OBJETO NOTION
+//Paquete @neurosity/notion: librería de Node.js que proporciona la API para interactuar con la Corona "Notion" de Neurosity. Proporciona las funciones y herramientas para la configuración del dispositivo, la transmisión de datos de señales cerebrales, la visualización de datos, el procesamiento de señales y la detección de eventos cerebrales específicos.
+
+require("dotenv").config(); //Carga el Paquete dotoenv y configura las variables de entorno del archivo .env
+//Paquete dotoenv: librería de Node.js que carga las variables de entorno (dentro del archivo de configuración .env) en la app (específicamente en el Objeto process.env de Node.js)
+
 
 //API ONDAS CEREBRALES (2). Extraccion CSV
 const xlsx = require('xlsx'); //Asigna el objeto xlsx a la constante xlsx
@@ -10,12 +16,11 @@ const fs = require('fs'); //fs (file system): módulo integrado de Node.js. Perm
 
 
 ///AUTENTICACION>>OBTENER VARIABLES DEL ARCHIVO .ENV. Extrae el ID del dispositivo, el correo y la contraseña de las variables de entorno (env)
-const deviceId = process.env.DEVICE_ID || ""; //OR***
+const deviceId = process.env.DEVICE_ID || ""; //Define la Constante deviceId que se inicializa con la variable de entorno devide_ID, si esta es undefined se le asigna el valor de una cadena vacía
 const email = process.env.EMAIL || "";
 const password = process.env.PASSWORD || "";
 
 ///AUTENTICACION>>OBTENER VARIABLES DEL ARCHIVO .ENV. Sale de la aplicacion si los valores anteriores están en blanco
-//Función:
 const verifyEnvs = (email, password, deviceId) => {
     const invalidEnv = (env) => {
       return env === "" || env === 0;
@@ -31,6 +36,9 @@ const verifyEnvs = (email, password, deviceId) => {
   verifyEnvs(email, password, deviceId);
   
   console.log(`${email} attempting to authenticate to ${deviceId}`);
+  //La función verifyEnvs toma 3 Argumentos. Si alguno es vacío o 0, muestra el mensaje de error y termina con el proceso.
+  //La función auxiliar invalidEnvs devuelve True si la variable de entorno está vacía o es 0.
+
 
   ///AUTENTICACION>>INSTALAR UN NOTION. Instanciamos un nuevo Notion usando el deviceID
   const notion = new Notion({
