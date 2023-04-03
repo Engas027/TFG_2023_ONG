@@ -44,19 +44,21 @@ const verifyEnvs = (email, password, deviceId) => {
   const notion = new Notion({
     deviceId
   });
+  //Instancia de objeto Notion con la propiedad deviceId. Cada instancia es independiente (se le asigna un espacio de memoria separado). Por ejemplo, un objeto Persona tiene propiedades como nombre/edad , se pueden crear múltiples instancias de Personas, cada una con sus propiedades.
 
-  ///AUTENTICACION>>AGREGAR INICIO DE SESION ASÍNCRONO
+  ///MAIN. AUTENTICACION EN UN SERVICIO EXTERNO>>AGREGAR INICIO DE SESION ASÍNCRONO
   const main = async () => {
-    await notion
+    await notion //la función await espera a que la función login se complete antes de seguir con el código
       .login({
         email,
         password
     })
-    .catch((error) => {
-      console.log(error);
-      throw new Error(error);
+    .catch((error) => { //Se captura el objeto error con la función catch
+      console.log(error); //Se imprime 
+      throw new Error(error); //Instancia del objeto error que detiene la función y lanza un error si hay un error en la operación anterior
     });
-    console.log("Logged in");
+    console.log("Logged in"); //Si la función login tiene éxito imprime esto
+    //La función login se llama con los parámetros email y psswd.
 
     ///API-CALM. Si BECALM es >0,3 imprime LOS DATOS
     ///ALT+MAY+A: Comentar codigo
@@ -74,9 +76,10 @@ const verifyEnvs = (email, password, deviceId) => {
     ///Épocas: cada grupo de 16 muestras. Se filtran en el S.O. del dispositivo. Propiedades del filtro: Noch (50-60Hz), Ancho de banda (1)/ Paso Banda con corte (2-45Hz)/ orden (2), tipo Butterworth
     
     const subscription = notion.brainwaves("powerByBand").subscribe((brainwaves) => {
-      console.log(brainwaves);
+      //console.log(brainwaves); //El objeto notion proporciona una suscripción a una fuente de datos de ondas cerebrales (se define la variable susbscription). La variable se define con la función subscribe y toma una función de devolución de llamada en el que los datos de brainwaves se pasan como parámetro de la función (que se ejecuta cada vez que se reciben nuevos datos).
+      //Brainwaves: método del objeto notion (parte de biblioteca/API externa)
       
-      //...Si a este código se le cambia "raw" por "rawUnfiltered" no se aplica filtro a la señal (escenarios avanzados)
+      //...Si a este código se le cambia el parámetro "raw" por "rawUnfiltered" no se aplica filtro a la señal (escenarios avanzados)
       //...Si a este código se le cambia "raw" por "psd" genera épocas 4 veces/s. Cada etiqueta de frecuencia (p.e: alpha) contiene un valor FFT por canal. 8 canales y 64 valores/canal.
       //...Si a este código se le cambia "raw" por "powerByBand" genera épocas 4 veces/s. Cada etiqueta de frecuencia (p.e: alpha) contiene la potencia promedio por canal. 5 frecuencias y 8 canales/frecuencia: 
       /* {
@@ -86,8 +89,20 @@ const verifyEnvs = (email, password, deviceId) => {
         beta: [12.5, 30],
         gamma: [30, 100] // NOTE: Bandpass attenuates signal above 45 Hz
       } */
+
+      const alphaCh1 = brainwaves.data.alpha[1];
+      const alphaCh3 = brainwaves.data.alpha[3];
+      const alphaChM = (alphaCh1+alphaCh3)/2;
+
+      console.log(`Valor Medio Alpha (C1 y C3): ${alphaChM}`);
+      if(alphaChM > 0.5){
+        console.log("Te sobas");
+      }
+
+
+
       
-      //DATA
+/*       //EXTRACCIÓN DE DATA
       const data = Object.values(brainwaves.data); //Data: Array creado con valores las Propiedades del Objeto brainwaves.data
       const rows = data[0].map((_, i) => Object.assign({}, ...data.map(d => ({ [Object.keys(d)[i]]: d[i] })))); //Rows: Array creado con el Array Data. Cada Objeto de Rows: fila, Cada Propiedad: columna. 
 
@@ -132,7 +147,7 @@ const verifyEnvs = (email, password, deviceId) => {
       //Se puede también usar el entrenamiento Kinesis de pensamientos (variante al código de arriba)
       //notion.kinesis("leftHandPinch").subscribe((intent) => {
         //console.log("Hello World!")
-      //});
+      //}); */
 
     });
 
