@@ -142,7 +142,7 @@ const verifyEnvs = (email, password, deviceId) => {
         xlsx.writeFile(workbook, excelFileName, { bookType: 'xlsx', type: 'buffer' });
         console.log(`Los datos se han guardado en el archivo ${excelFileName}`);
       }, 1000); //1s
-        
+      
 
       //Se puede también usar el entrenamiento Kinesis de pensamientos (variante al código de arriba)
       //notion.kinesis("leftHandPinch").subscribe((intent) => {
