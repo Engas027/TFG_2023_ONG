@@ -1,10 +1,13 @@
 //GH
 //La lógica es un mapa para la etiqueta del estado y otro para el color que representa
+//Muestra el estado del dispositivo
+
 import React from "react";
 import { Link } from "@reach/router";
 
-import { useNotion } from "../services/notion";
+import { useNotion } from "../services/notion"; //Utiliza biblioteca useNotion
 
+//State
 const statesLabels = {
   booting: "Starting OS...",
   shuttingOff: "Shutting off...",
@@ -13,6 +16,8 @@ const statesLabels = {
   offline: "Offline"
 };
 
+//Booting: sistema iniciandose (nunca los he visto)
+//ShuttingOff: sistema apagandose (nunca los he visto)
 const stateColors = {
   booting: "darkslategrey",
   shuttingOff: "darkslategrey",
@@ -22,13 +27,18 @@ const stateColors = {
 };
 
 export function Status() {
-  const { status, selectedDevice } = useNotion();
-  const { state, charging, battery, sleepMode } = status || {};
+  const { status, selectedDevice } = useNotion(); //Variable selectedDevice  y status de useNotion
+  const { state, charging, battery, sleepMode } = status || {}; //Si status (objeto) tiene valor hace que las constantes se inicialicen, sino lo inicializa vacío
 
+  //Si el estado es null...
   if (!status) {
-    return <div>Connecting to device...</div>;
+    return <div>Conectándose al dispositivo...</div>;
   }
 
+  //Si selectedDevice existe: 
+  //muestra el nombre en el encabezado
+  //muestra el estado del dispositivo (status)
+  //si el dispositivo es online muestra el estado de carga (si charging es verdadero, Cargando...)
   return (
     <aside>
       {selectedDevice ? (
@@ -42,8 +52,8 @@ export function Status() {
               ⚙️
             </span>
             &nbsp;&nbsp;
-            {selectedDevice.deviceNickname}
-          </Link>
+            {selectedDevice.deviceNickname} 
+          </Link> 
         </h3>
       ) : null}
       <div className="status-item status-state">
@@ -55,13 +65,13 @@ export function Status() {
       </div>
       {state !== "offline" ? (
         <div className="status-item status-battery">
-          <ChargingIcon /> &nbsp;{charging ? "Charging" : "Charged"}
+          <ChargingIcon /> &nbsp;{charging ? "Cargando..." : "Cargado: "} 
           &nbsp;{battery}%
         </div>
       ) : null}
       {sleepMode && state !== "offline" ? (
         <div className="status-item status-sleep-mode">
-          <SleepModeIcon /> &nbsp;Sleep mode
+          <SleepModeIcon /> &nbsp;Sleep Mode
         </div>
       ) : null}
     </aside>
