@@ -3,13 +3,12 @@
 //La función setError agrega una validación del formulario.
 //La ejecución de la función de login() es un Efecto Secundario que sincroniza email y password con los accesorios recibidos en la pagina. Llamamos a esta función si no hay una sesión de autenticación, si hay una instancia de Neurosity en el estado y si el usuario ha enviado un email y contraseña
 //USER: objeto que contiene la sesión de autenticación de SDK Neurosity
+
 import React, { useState, useEffect } from "react"; //Autenticación
 import { navigate } from "@reach/router";
 import useEffectOnce from "react-use/lib/useEffectOnce";
-
 import { LoginForm } from "../components/LoginForm"; //Autenticación
 import { Footer } from "../components/Footer";
-
 import { notion, useNotion } from "../services/notion";
 
 export function Login() {
@@ -56,7 +55,7 @@ export function Login() {
       setEmail(email);
       setPassword(password);
     } else {
-      setError("Please fill the form");
+      setError("Rellene el Formulario");
     }
   }
 
@@ -69,7 +68,7 @@ export function Login() {
   //Autenticación
   return (
     <main className="main-container">
-      <LoginForm onLogin={onLogin} error={error} loading={isLoggingIn} footerComponent={<Footer />}
+      <LoginForm onLogin={onLogin} error={error} loading={isLoggingIn} footerComponent={<Footer />} //Renderiza la Componente LoginForm y le pasa esas Propiedades
       />
     </main>
   );
