@@ -1,27 +1,30 @@
-//GH
-//AUTENTICACION. Este componente recopila la información del formulario de inicio de sesión. Mantiene el estado del deviceID, email y password. El componente acepta estas propiedades: 
-//onLogin: se ejecuta al hacer click en Iniciar sesión
-//loading: cuando el envío del formulario está en curso
-//error: mensaje al haber error
+//El Componente es un formulario HTML de inicio de sesion. 
+//La funcion LoginForm recibe 4 Propiedades:  
+  //onLogin: se ejecuta al hacer click en Iniciar sesión
+  //loading: cuando el envío del formulario está en curso
+  //error: mensaje al haber error
+
+//AUTENTICACION. 
+
 import React, { useState } from "react";
 
 export function LoginForm({ onLogin, loading, error, footerComponent }) {
-  //const [deviceId, setDeviceId] = useState(""); CAPTURA
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [deviceId, setDeviceId] = useState(""); 
+  const [email, setEmail] = useState(""); //Estado 1: se inicializa vacío
+  const [password, setPassword] = useState(""); //Estado 2: se inicializa vacío
 
   function onSubmit(event) {
-    event.preventDefault();
-    onLogin({ email, password }); //Aquí incluye deviceId. CAPTURA
+    event.preventDefault(); //Event es un Objeto y preventDefault un método (para que el envío del formulario se produzca en la aplicación y no en el servidor)
+    onLogin({ email, password }); //Les pasa los dos objetos a onLogin
   }
 
   return (
     <form className="card login-form" onSubmit={onSubmit}>
-      <h3 className="card-heading">Login</h3>
+      <h3 className="card-heading">Inicio de Sesión</h3>
       {!!error ? <h4 className="card-error">{error}</h4> : null}
 
       <div className="row">
-        <label>Email</label>
+        <label>E-mail:</label>
         <input
           type="email"
           value={email}
@@ -31,7 +34,7 @@ export function LoginForm({ onLogin, loading, error, footerComponent }) {
       </div>
 
       <div className="row">
-        <label>Password</label>
+        <label>Contraseña:</label>
         <input
           type="password"
           value={password}
@@ -42,7 +45,7 @@ export function LoginForm({ onLogin, loading, error, footerComponent }) {
 
       <div className="row">
         <button type="submit" className="card-btn" disabled={loading}>
-          {loading ? "Logging in..." : "Login"}
+          {loading ? "Accediendo..." : "Acceder"}
         </button>
       </div>
 
