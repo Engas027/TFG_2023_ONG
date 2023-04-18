@@ -2,7 +2,7 @@
 //ESTADO
 import React, { useEffect } from "react"; //Estado
 import { Router, navigate } from "@reach/router"; //Estado
-
+//import { Notion } from "@neurosity/notion"; //Node-app cambiado*
 import { ProvideNotion } from "./services/notion";
 import { Devices } from "./pages/Devices";
 import { Loading } from "./components/Loading";
@@ -11,6 +11,8 @@ import { Logout } from "./pages/Logout"; //SDK
 import { Calm } from "./pages/Calm"; //Calm
 
 import { useNotion } from "./services/notion";
+
+
 
 
 export function App() {
