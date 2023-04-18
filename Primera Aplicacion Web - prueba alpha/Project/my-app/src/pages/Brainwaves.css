@@ -1,0 +1,65 @@
+.brainwaves-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #000c14;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+  
+  .brainwaves-label {
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: rgb(113, 211, 211);;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .brainwaves-score {
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease-in-out;
+  }
+
+    .brainwaves-score.score-green {
+      background-color: #66ff66; /* Verde */
+    }
+
+    .brainwaves-score.score-red {
+      background-color: #ff6666; /* Rojo */
+    }
+
+  .brainwaves-score:hover {
+    background-color: #f5f5f5;
+  }
+
+  .test-finished {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .test-finished-text {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(246, 248, 246);
+    background-color: #f00707;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
