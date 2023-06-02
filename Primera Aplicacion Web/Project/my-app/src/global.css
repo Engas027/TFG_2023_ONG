@@ -90,7 +90,7 @@
   }
   
   .card-btn {
-    background: rgb(113, 211, 211);
+    background: rgb(113, 211, 134);
     color: #000c14;
     border: none;
     padding: 8px 20px;
@@ -114,8 +114,14 @@
   }
   
   .card-footer-cta {
-    display: block;
-    align-self: center;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .footer-images {
+    height: 1em;
+    vertical-align: middle;
+    width: auto;
   }
   
   .card-footer-credits {
