@@ -119,9 +119,11 @@
   }
 
   .footer-images {
-    height: 1em;
+    height: 50px; 
+    width: 50px;
     vertical-align: middle;
     width: auto;
+    margin-top: 10px;
   }
   
   .card-footer-credits {
