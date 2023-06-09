@@ -8,7 +8,7 @@ import { Devices } from "./pages/Devices";
 import { Loading } from "./components/Loading";
 import { Login } from "./pages/Login"; //Estado
 import { Logout } from "./pages/Logout"; //SDK
-import { Calm } from "./pages/Calm"; //Calm
+import { Brainwaves, Calm } from "./pages/Brainwaves"; //Brainwaves
 
 import { useNotion } from "./services/notion";
 
@@ -38,7 +38,7 @@ function Routes() {
 
   return (
     <Router>
-      <Calm path="/" /> 
+      <Brainwaves path="/" /> 
       <Devices path="/devices" />
       <Login path="/login" />
       <Logout path="/logout" />
