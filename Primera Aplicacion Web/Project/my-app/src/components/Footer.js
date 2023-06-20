@@ -13,22 +13,21 @@ export function Footer() {
     <footer className="card-footer"> 
       <a
         className="card-link card-footer-cta"
-        href="https://github.com/Engas027/TFG_2023_ONG"
+        href="https://www.linkedin.com/in/daniel-oriol-niso-galan/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Ver repositorio GitHub
+        Autor: Daniel-Oriol Niso Galán 
       </a>
       
       <div className="card-footer-credits">
-      Hecho por{" "}
         <a
           className="card-link"
-          href="https://www.linkedin.com/in/daniel-oriol-niso-galan/"
+          href="https://github.com/Engas027/TFG_2023_ONG"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Daniel-Oriol Niso Galán
+          Ver repositorio GitHub
         </a> 
       </div> 
 
