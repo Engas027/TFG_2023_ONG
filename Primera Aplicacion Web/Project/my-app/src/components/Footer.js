@@ -2,8 +2,8 @@
 //Componente Footer de la biblioteca JS React 
   //React: diseñada por Facebook para construir interfaces de usuario (UI) en aplicaciones web. Destaca por la creación de componentes reutilizables (como este Footer, por ejemplo), siendo interfaces dinámicas y escalables. Es de código abierto.
 import React from "react";
-import logo1 from '../marcaUAM_AhorizontalBlanco_imp.eps'; //Logo de la uni
-import logo2 from '../marcaUAM_AhorizontalNegro_imp.pdf'; //Logo de la eps
+import logo1 from '../marcaUAM_AhorizontalColor.png'; //Logo de la uni
+import logo2 from '../EPS.png'; //Logo de la eps
 
 //Esta función devuelve un JSX (que permite código HTML). JSX es una extensión de sintaxis.
 //Está formada por un elemento HTML Footer con dos hijos: GitHub y DONG
