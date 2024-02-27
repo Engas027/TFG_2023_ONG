@@ -1,0 +1,106 @@
+
+.brainwaves-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #140006;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Para pintar los valores de alpha */
+.brainwaves-label {
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 1px;
+  padding: 5px 10px;
+  background-color: rgb(119, 120, 142);;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.brainwaves-score {
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.5s ease-in-out;
+}
+.brainwaves-score.score-green {
+  background-color: #66ff66; /* Verde */
+}
+.brainwaves-score.score-red {
+  background-color: #ff6666; /* Rojo */
+}
+.brainwaves-score:hover {
+  background-color: #f5f5f5;
+}
+
+/* Contador */
+.timer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+  
+.timer {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #000c1420;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.timer-message {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 8px;
+}
+
+
+.test-finished {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.test-finished-text {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(246, 248, 246);
+  background-color: #f00707;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.calculated-values-container¨{
+  margin-right: 10px;
+  font-size: 50px;
+  font-weight: bold;
+  border-radius: 1px;
+  padding: 5px 10px;
+  background-color: rgb(119, 120, 142);;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.chart-container {
+  margin-top: 20px;
+}
