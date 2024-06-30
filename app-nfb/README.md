@@ -14,6 +14,8 @@ Escuela Politécnica Superior - Universidad Autónoma de Madrid
 
 ![Imagen interfaz app](public/Imagen_Readme.png)
 
+![Logo UAM](src/marcaUAM_AhorizontalColor.png)
+
 ### Instalar la aplicación
 
 Para instalar la aplicación web de neurofeedback, debes realizar los siguientes pasos a continuación:
@@ -28,4 +30,3 @@ Puedes ver más detalles sobre su funcionamiento en el repositorio OSF asociado 
 https://osf.io/qfzvm
 
 MIT License
-
