@@ -5,12 +5,12 @@
 Junio 2024
 
 GRADO EN INGENIERÍA DE TECNOLOGÍAS Y SERVICIOS DE TELECOMUNICACIÓN
-Escuela Politécnica Superior
-Universidad Autónoma de Madrid
 
-Autor: Daniel Oriol Niso Galán
-Tutora: Julia Guiomar Niso Galán
-Ponente: Aythami Morales Moreno
+Escuela Politécnica Superior - Universidad Autónoma de Madrid
+
+- Autor: Daniel Oriol Niso Galán
+- Tutora: Julia Guiomar Niso Galán
+- Ponente: Aythami Morales Moreno
 
 
 ## Resumen: 
