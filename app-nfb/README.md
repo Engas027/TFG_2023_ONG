@@ -12,7 +12,6 @@ Escuela Politécnica Superior - Universidad Autónoma de Madrid
 - Tutora: Julia Guiomar Niso Galán
 - Ponente: Aythami Morales Moreno
 
-
 ![Imagen interfaz app](public/Imagen_Readme.png)
 
 ### Instalar la aplicación
