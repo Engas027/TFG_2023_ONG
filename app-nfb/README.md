@@ -12,9 +12,12 @@ Escuela Politécnica Superior - Universidad Autónoma de Madrid
 - Tutora: Julia Guiomar Niso Galán
 - Ponente: Aythami Morales Moreno
 
-
-<img src="src/marcaUAM_AhorizontalColor.png" alt="Logo UAM" width="400"/>
-<img src="public/Imagen_Readme.png" alt="Imagen interfaz app" width="900"/>
+<p align="center">
+  <img src="src/marcaUAM_AhorizontalColor.png" alt="Logo UAM" width="400"/>
+</p>
+<p align="center">
+  <img src="public/Imagen_Readme.png" alt="Imagen interfaz app" width="900"/>
+</p>
 
 ### Instalar la aplicación
 
